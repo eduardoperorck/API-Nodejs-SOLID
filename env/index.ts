@@ -1,5 +1,4 @@
 import 'dotenv/config'
-import { M } from 'vite/dist/node/types.d-aGj9QkWt'
 import { z } from 'zod'
 
 const envSchema = z.object({
@@ -9,7 +8,7 @@ const envSchema = z.object({
 
 const _env = envSchema.safeParse(process.env)
 
-if (_env.success == false) {
+if (_env.success === false) {
   console.log('Invalid environment variables', _env.error.format)
 
   throw new Error('Invalid environment variables')
