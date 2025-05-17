@@ -7,7 +7,7 @@ import { CheckInService } from '../check-in'
 
 let checkInsRepository: InMemoryCheckInsRepository
 let gymsRepository: InMemoryGymsRepository
-let sut: CheckInUseCase
+let sut: CheckInService
 
 describe('Check-in Use Case', () => {
   beforeEach(() => {
