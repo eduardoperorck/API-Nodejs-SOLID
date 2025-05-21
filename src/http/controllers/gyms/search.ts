@@ -9,7 +9,7 @@ export async function search(request: FastifyRequest, reply: FastifyReply) {
 
   })
 
-  const { q, page } = searchGymBodySchema.parse(request.body)
+  const { q, page } = searchGymBodySchema.parse(request.query)
 
   const searchGymsService = makeSearchGymsService()
 
