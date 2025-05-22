@@ -12,8 +12,8 @@ describe('Create Gym (e2e)', () => {
     await app.close()
   })
 
-  it('should be able to create a gym', async () => {
-    const { token } = await createAndAuthenticateUser(app)
+  it('should be able to search a gym', async () => {
+    const { token } = await createAndAuthenticateUser(app, true)
 
     await request(app.server)
       .post('/gyms')
@@ -49,7 +49,7 @@ describe('Create Gym (e2e)', () => {
     expect(response.body.gyms).toHaveLength(1)
     expect(response.body.gyms).toEqual([
       expect.objectContaining({
-        title: 'Javascript Gym',
+        title: 'JavaScript Gym',
       }),
     ])
   })
